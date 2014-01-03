@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+  <title>Zillabyte Travelling Salesman</title>
+  
+  <link href="tsp.css" rel="stylesheet" type="text/css">
+  
+  <!-- Vendor JS Files -->
+  <script src="vendor/jquery.min.js"></script>
+  <script src="vendor/d3.v2.js"></script>
+  <script src="vendor/underscore.js"></script>
+  
+  <!-- Stuff to get the TSP working -->
+  <script src="harness.js"></script>
+  <script src="random_graph_builder.js"></script>
+  <script src="renderer.js"></script>
+  
+  <!-- Algorithms -->
+  <script src="greedy_salesman.js"></script>
+  <script src="quick_salesman.js"></script>
+  <script src="ant_salesman.js"></script>
+  <!--<script src="ant_salesman_bigfunc.js"></script> -->
+  
+</head>
+<body>
+
+  <!-- 
+    Welcome, fellow hacker. You may git-clone this puzzle from: http://github.com/zillabyte/puzzles
+    Happy coding, and may the odds be ever in your favor. 
+  -->
+  
+  <div id="graph"></div>
+  
+  <div id="info">
+    <h1>Zillabyte</h1>
+    <p>
+      The Travelling Salesman Problem (TSP) tries to find the shortest path through a given graph, touching every point and returning to the starting position.
+      <br/>
+      <br/>
+      This is an NP-hard problem, and finding the best solution efficiently is one of the great challenges of Computer Science.
+      <br/>
+      <br/>
+      At Zillabyte, we like hard problems.  We also like helping sales people.  Can you implement a better solution to the TSP than we have here? If so, email your implementation (or a link) to <a href="mailto:jobs@zillabyte.com">jobs@zillabyte.com</a>
+      <br><br>
+      <a href='http://www.zillabyte.com/jobs'>zillabyte.com/jobs</a>
+    </p>
+  </div>
+  
+  <script>
+    
+    
+    // Initialize
+    var renderer = new Renderer("#graph");
+    var graph_builder = new RandomGraphBuilder();
+    var graph = graph_builder.build_graph();
+    var harness = new Harness();
+    var start_point_id = "pt_0";
+    var ant_score = 999999999;
+    var quick_score = 999999999;
+    
+    
+    // Render the graph
+    renderer.set_graph(graph);
+    
+    
+    // Their baseline implementation
+    var greedy_salesman = new GreedySalesman()
+    var greedy_plan = harness.run_algorithm(graph, start_point_id, greedy_salesman);
+    greedy_score = harness.compute_plan_cost(graph, greedy_plan);    
+    // window.setTimeout(function() {renderer.start_plan(greedy_plan, "player_one");}, 2500)
+    console.log("*** Greedy Algorithm Total Distance: " + String(greedy_score));
+    
+    // My quick, simple implementation
+    var quick_salesman = new QuickSalesman(); 
+    var quick_plan = harness.run_algorithm(graph, start_point_id, quick_salesman);
+    quick_score = harness.compute_plan_cost(graph, quick_plan);
+    window.setTimeout(function() {renderer.start_plan(quick_plan, "player_one");}, 2500)
+    console.log("*** Quick Algorithm Total Distance: " + String(quick_score));
+    
+    // My ant-trail implementation based on ant-tsp.pdf
+    var ant_salesman = new AntSalesman(); 
+    var ant_plan = harness.run_algorithm(graph, start_point_id, ant_salesman);
+    ant_score = harness.compute_plan_cost(graph, ant_plan);
+    window.setTimeout(function() {renderer.start_plan(ant_plan, "player_two");}, 2500)
+    console.log("*** Ant Pheromone Algorithm Total Distance: " + String(ant_score));
+    
+
+    
+    // Congrats? 
+    // if (your_score < greedy_score) {
+    //   console.log("*** BOOM! Nice job. You defeated our implementation. You should email jobs@zillabyte.com RIGHT NOW.  A world of glory awaits you.");
+    // }
+    
+    
+  </script>
+</body>
+</html>

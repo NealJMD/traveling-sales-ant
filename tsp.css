@@ -1,0 +1,293 @@
+@import url(http://fonts.googleapis.com/css?family=Orbitron:900);
+
+/* eric meyer's reset */ 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* colors & typography */ 
+
+html { 
+	/* background-color: #e0e5e6; */
+}
+h1 { 
+  font-family: 'Orbitron', cursive;
+  color: #fff;
+  font-size: 72px;
+  text-shadow:0px 0px 0 rgb(234,234,234),0px 1px 0 rgb(223,223,223),0px 2px 0 rgb(212,212,212),0px 3px 0 rgb(202,202,202),0px 4px 0 rgb(191,191,191),0px 5px 0 rgb(180,180,180),0px 6px 0 rgb(169,169,169),0px 7px 0 rgb(158,158,158), 0px 8px 0 rgb(147,147,147),0px 9px 8px rgba(0,0,0,0.6),0px 9px 1px rgba(0,0,0,0.5),0px 0px 30px rgba(0,0,0,.9);
+}
+p { 
+  font-family: Sans-Serif;
+  font-size: 1em; 
+  color: #6d7f89; 
+}
+#distance { 
+  font-weight: 700; 
+}
+
+article h1{ 
+	color: #efeff1;
+	font-size: 1.25em;
+	line-height: 1.25em;
+}
+article p { 
+	color: #efeff1;
+	font-size: 1em;
+	font-family: Sans-Serif; 
+	line-height: 1.5em;
+	font-weight: 300; 
+}
+
+.error { 
+  display: none; 
+}
+.error p { 
+  font-family: Sans-Serif;  
+  font-size: 1.25em; 
+  line-height: 1.5em;
+  font-weight: 400;  
+  color: #d93252; 
+} 
+
+
+/* typography */ 
+  
+#button p{    
+   font-family: Sans-Serif; 
+}
+
+ /*  layout */ 
+
+
+.button { 
+	-moz-box-shadow: -1px 1px 0px 0px #87a881;
+	-webkit-box-shadow: -1px 1px 0px 0px #87a881;
+	box-shadow: -1px 1px 0px 0px #87a881;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #a7ff9a), color-stop(1, #a9f09c) );
+	background:-moz-linear-gradient( center top, #a7ff9a 5%, #a9f09c 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a7ff9a', endColorstr='#a9f09c');
+	background-color:#89d173;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	display:inline-block;
+	color:#5c4b5c;
+	font-family: 'Open Sans', sans-serif; 
+	font-size:22px;
+	font-weight:300;
+  cursor: pointer; 
+	padding:5px 42px;
+	text-decoration:none;
+}.button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #a9f09c), color-stop(1, #a7ff9a) );
+	background:-moz-linear-gradient( center top, #a9f09c 5%, #a7ff9a 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a9f09c', endColorstr='#a7ff9a');
+	background-color:#6d7f89;
+}.button:active {
+	position:relative;
+	top:1px;
+}
+.button { 
+  float: left;
+  margin: 20px 10px; 
+}
+#randomize { 
+  margin-left: 0;
+}
+.wrapper{ 
+  width: 80em; 
+  margin:  0 0 0 100px; 
+}
+.timer { 
+	margin: 20px 0 0 0;
+}
+
+#bobzilla { 
+  background:url('zillaa.png') right center no-repeat; 
+  background-position: 0px 15px; 
+  height: 135px; 
+  width: 46px;
+  margin: 0 auto; 
+  position: relative; 
+  text-align: center; 
+}
+  
+#sliding:hover #bobzilla{ 
+  background-position: 0px -147px; 
+  cursor: pointer; 
+}
+
+
+#zilla { 
+ margin: 20px 0px;  
+}
+
+#graph { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.work { 
+	margin: 25px 0 0 0; 
+	float: left; 
+}
+
+nav { 
+  width: 100%;   
+}
+
+#nav-drawer { 
+  display:none; 
+  padding: 30px 60px; 
+  height:50px; 
+}
+
+#nav-content { 
+  
+}
+
+#zilla_question { 
+  background: url("app/assets/images/tiny_zilla.png") repeat-x;
+  height: 60px; 
+  width: 60px; 
+  cursor: pointer; 
+}
+
+/* 3. d3.js */ 
+circle { 
+	stroke: #939393; 
+	stroke-width: 1px; 
+	fill: #a8ff9a; 
+}
+.x line, .y line {
+	stroke: #ccc;
+	stroke-dasharray: 3,5; 
+	opacity: .95;
+	shape-rendering: crispEdges;
+}
+line.arcs { 
+	stroke: #696b65; 
+  opacity: .1;
+	shape-rendering: crispEdges; 
+	stroke-width: 1px; 
+	z-index: -1;
+}
+.y text, .x text { 
+	font-family: sans-serif; 
+	color: #e3f3e5;
+}
+.st0 { 
+	fill:#FFFFFF;
+	stroke:#000000;
+	stroke-miterlimit:10; 
+}
+
+
+.b1 { 
+	fill: #BF3000; 
+}
+.b2 { 
+	fill: #773000; 
+}
+
+
+.node_selected {
+  stroke-width: 2px;
+  stroke: black;
+}
+
+#info {
+  width: 300px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -150px;
+  background: rgba(0, 30, 60, 0.7);
+  text-align: center;
+  box-shadow: 0 8px 16px #333;
+}
+
+#info p {
+  color: white;
+  padding: 60px 5px 5px 5px;
+  font-size: 14px;
+  font-family: courier;
+}
+
+#info a, #info a:visited {
+  color: white;
+  font-weight: bold;
+}
+
+#info h1 {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  margin-left: -200px;
+  top: -25px;
+  color: #fffffb;
+}
+
+.node_visited_player_one {
+  fill: #00F;
+}
+
+.node_visited_player_two {
+  fill: #F00;
+}
+
+.node_visited_player_one.node_visited_player_two {
+  fill: #A0A;
+}
+
+#player_one {
+  stroke: #008;
+}
+
+#player_two {
+  stroke: #800;
+}
